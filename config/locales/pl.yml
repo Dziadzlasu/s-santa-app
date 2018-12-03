@@ -1,0 +1,5 @@
+pl:
+  save: 'Zapisz'
+  wish:
+    new_placeholder: 'Wpisz życzenia w tym polu, może któreś się spełni!'
+    input: 'Wpisz swoje życzenia'

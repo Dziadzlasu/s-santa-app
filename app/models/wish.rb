@@ -1,7 +1,7 @@
 class Wish < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true # optional is temporary, until devise is set up
 
-  validates_presence_of :user, :description
+  validates_presence_of :description
 
   scope :pending, -> { where(status: 'pending') }
   scope :realised, -> { where(status: 'completed') }
