@@ -6,10 +6,10 @@ class WishesController < ApplicationController
   def create
     @wish = Wish.new(wish_params)
     if @wish.valid? && @wish.save!
-      flash[:success] = 'Zapisano życzenia'
+      flash[:success] = t('wish.create_success')
       redirect_to new_wish_path
     else
-      flash[:error] = 'Nie powiodło się zapisanie życzenia. Sprawdź czy pole jest wypełnione.'
+      flash[:error] = t('wish.create_failed')
       render :new
     end
   end
