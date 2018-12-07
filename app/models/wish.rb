@@ -4,5 +4,5 @@ class Wish < ApplicationRecord
   validates_presence_of :description
 
   scope :pending, -> { where(status: 'pending') }
-  scope :realised, -> { where(status: 'completed') }
+  scope :fulfilled, -> { where(status: 'completed') }
 end
