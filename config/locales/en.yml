@@ -31,3 +31,9 @@
 
 en:
   hello: "Hello world"
+  save: 'Save'
+  wish:
+    new_placeholder: 'Enter your wishes in this field, maybe one of them will come true!'
+    input: 'Enter your wishes'
+    create_success: 'Zapisano życzenia'
+    create_failed: 'Nie powiodło się zapisanie życzenia. Sprawdź czy pole jest poprawnie wypełnione.'

@@ -14,7 +14,7 @@
       <div>
         <% flash.each do |key, value| %>
           <div class="alert alert-dismissable <%= flash_class(key) %> role="alert" fade in">
-             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <%= value %>
           </div>
         <% end %>

@@ -1,0 +1,7 @@
+pl:
+  save: 'Zapisz'
+  wish:
+    new_placeholder: 'Wpisz życzenia w tym polu, może któreś się spełni!'
+    input: 'Wpisz swoje życzenia'
+    create_success: 'Zapisano życzenia'
+    create_failed: 'Nie powiodło się zapisanie życzenia. Sprawdź czy pole jest poprawnie wypełnione.'

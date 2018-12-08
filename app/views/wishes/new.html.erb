@@ -1,0 +1,9 @@
+<h2><%= t('wish.input') %> </h2>
+
+<%= form_for @wish do |form| %>
+  <div class='form-group'>
+    <%= form.text_area :description, rows: 5, required: true, class: 'form-control', placeholder: t('wish.new_placeholder') %>
+  </div>
+  <%= form.submit t('save'), class: 'button, btn-primary' %>
+
+<% end %>
