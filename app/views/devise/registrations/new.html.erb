@@ -11,6 +11,15 @@
       <%= f.label :email %>
       <%= f.email_field :email, autofocus: true, class: 'form-control', autocomplete: "email" %>
     </div>
+    <div class="field">
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name, class: 'form-control' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :last_name %><br />
+      <%= f.text_field :last_name, class: 'form-control' %>
+    </div>
 
     <div class="field">
       <%= f.label :password %>
