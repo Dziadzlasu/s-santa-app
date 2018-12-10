@@ -11,8 +11,10 @@ class User < ApplicationRecord
 
   has_many :wishes
 
+  before_validation :normalize_login
+
   def validate_username
-    if User.where(email: username).exists?
+    if User.where(email: username).where.not(email: nil).exists?
       errors.add(:username, :invalid)
     end
   end
@@ -38,10 +40,15 @@ class User < ApplicationRecord
     end
   end
 
+  def normalize_login
+    self.email = nil if email.blank?
+    self.username = nil if username.blank?
+  end
+
   protected
 
   def email_required?
-    false
+    username.blank?
   end
 
   def username_required?
