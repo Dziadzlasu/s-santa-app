@@ -4,8 +4,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  validates_presence_of :email, :first_name, :last_name
-  validates :username, presence: true, uniqueness: { case_sensitive: false }
+  validates_presence_of :first_name, :last_name
+  validates :username, presence: true, uniqueness: { case_sensitive: false }, if: :username_required?
+
   validate :validate_username
 
   has_many :wishes
@@ -35,5 +36,15 @@ class User < ApplicationRecord
         where(username: conditions[:username]).first
       end
     end
+  end
+
+  protected
+
+  def email_required?
+    false
+  end
+
+  def username_required?
+    email.blank?
   end
 end
