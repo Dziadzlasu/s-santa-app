@@ -1,0 +1,22 @@
+<!--  after assignment -->
+<div class="col-sm-12 col-lg-7 col-xl-7 mx-auto mb-5 mb-xl-4 mt-5 mt-sm-0">
+  <div class="card">
+    <a href='https://www.pexels.com/photo/brown-pinecone-on-white-rectangular-board-688017/', target='_blank'>
+      <img class="card-img-top" src="images/gifts.jpg" alt="Card image cap">
+    </a>
+    <div class="card-body">
+      <h6 class="card-title text-center text-muted">Obdarowujesz w tym roku:</h6>
+      <h5 class="card-title text-center"><%= @recipient.full_name %></h5>
+      <h6 class="card-title text-center text-muted">Życzy sobie:</h6>
+      <% if @wish.present? %>
+        <p class="card-text">
+          <%= @wish.description %>
+        </p>
+      <% else %>
+        <p class='card-text text-center'>
+          Wygląda na to, że jeszcze nie ma tu wymarzonego prezentu
+        </p>
+      <% end %>
+    </div>
+  </div>
+</div>
