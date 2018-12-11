@@ -10,6 +10,13 @@ class User < ApplicationRecord
   validate :validate_username
 
   has_many :wishes
+  has_many :pairings
+  has_one :giver, class_name: 'User'
+  has_one :recipient_pairing, -> { where(active: true) }, class_name: 'Pairing', foreign_key: :giver_id
+  has_one :recipient, through: :recipient_pairing, class_name: 'User'
+
+  has_one :giver_pairing, -> { where(active: true) }, class_name: 'Pairing', foreign_key: :recipient_id
+  has_one :giver, through: :giver_pairing, class_name: 'User'
 
   before_validation :normalize_login
 
