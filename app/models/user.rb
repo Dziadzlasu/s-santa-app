@@ -52,6 +52,10 @@ class User < ApplicationRecord
     self.username = nil if username.blank?
   end
 
+  def wish_to_fulfill
+    wishes.pending.first
+  end
+
   protected
 
   def email_required?
