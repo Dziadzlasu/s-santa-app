@@ -1,7 +1,23 @@
 pl:
   save: 'Zapisz'
+  sign_up: 'Rejestracja'
+  log_in: 'Login'
+  send: 'Wyślij'
   wish:
     new_placeholder: 'Wpisz życzenia w tym polu, może któreś się spełni!'
     input: 'Wpisz swoje życzenia'
     create_success: 'Zapisano życzenia'
     create_failed: 'Nie powiodło się zapisanie życzenia. Sprawdź czy pole jest poprawnie wypełnione.'
+
+  activerecord:
+    models:
+      user: 'Użytkownik'
+    attributes:
+      user:
+        username: 'Login'
+        email: 'Adres email'
+        first_name: 'Imię'
+        last_name: 'Nazwisko'
+        password: 'Hasło'
+        password_confirmation: 'Potwierdzenie hasła'
+        remember_me: 'Zapamiętaj mnie'
