@@ -1,7 +1,7 @@
 <h1 class='d-none d-sm-block'>Strona główna</h1>
 <h4 class='d-block d-sm-none text-center mt-1'>Strona główna</h4>
 
-<% unless @recipient.present? %>
+<% if @recipient.present? %>
   <%= render partial: 'dashboard/shared/giftee_card' %>
 <% else %>
   <%= render partial: 'dashboard/shared/empty_giftee_card' %>
