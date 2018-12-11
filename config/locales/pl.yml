@@ -4,8 +4,8 @@ pl:
   log_in: 'Login'
   send: 'Wyślij'
   wish:
-    new_placeholder: 'Wpisz życzenia w tym polu, może któreś się spełni!'
-    input: 'Wpisz swoje życzenia'
+    new_placeholder: 'Wpisz czego sobie życzysz pod choinkę, pomóż Mikołajowi!'
+    input: 'Co chcesz dostać pod choinkę?'
     create_success: 'Zapisano życzenia'
     create_failed: 'Nie powiodło się zapisanie życzenia. Sprawdź czy pole jest poprawnie wypełnione.'
 
