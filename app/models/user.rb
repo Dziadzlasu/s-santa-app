@@ -4,14 +4,17 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  validates_presence_of :email, :first_name, :last_name
-  validates :username, presence: true, uniqueness: { case_sensitive: false }
+  validates_presence_of :first_name, :last_name
+  validates :username, presence: true, uniqueness: { case_sensitive: false }, if: :username_required?
+
   validate :validate_username
 
   has_many :wishes
 
+  before_validation :normalize_login
+
   def validate_username
-    if User.where(email: username).exists?
+    if User.where(email: username).where.not(email: nil).exists?
       errors.add(:username, :invalid)
     end
   end
@@ -35,5 +38,20 @@ class User < ApplicationRecord
         where(username: conditions[:username]).first
       end
     end
+  end
+
+  def normalize_login
+    self.email = nil if email.blank?
+    self.username = nil if username.blank?
+  end
+
+  protected
+
+  def email_required?
+    username.blank?
+  end
+
+  def username_required?
+    email.blank?
   end
 end
