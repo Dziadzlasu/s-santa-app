@@ -4,7 +4,7 @@ class WishesController < ApplicationController
   end
 
   def create
-    @wish = Wish.new(wish_params)
+    @wish = current_user.wishes.new(wish_params)
     if @wish.valid? && @wish.save!
       flash[:success] = t('wish.create_success')
       redirect_to new_wish_path
