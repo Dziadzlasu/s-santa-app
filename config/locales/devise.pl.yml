@@ -1,0 +1,10 @@
+pl:
+  devise:
+    failure:
+      unauthenticated: 'Aby kontynuować musisz się zalogować.'
+      invalid: 'Niepoprawny login lub hasło.'
+      not_found_in_database: 'Niepoprawny login lub hasło.'
+    sessions:
+      user:
+        signed_in: "Zalogowano."
+        signed_out: "Wylogowano."
