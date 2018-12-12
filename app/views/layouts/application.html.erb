@@ -11,6 +11,7 @@
 
   <body>
     <div class="container">
+      <%= render partial: 'shared/navbar' %>
       <div>
         <% flash.each do |key, value| %>
           <div class="alert alert-dismissable <%= flash_class(key) %> role="alert" fade in">

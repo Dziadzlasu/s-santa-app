@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand">Secret Santa</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <%= link_to 'Strona główna', root_path, class: "nav-item nav-link #{active_class(root_path)}" %>
+      <%= link_to 'Dodaj życzenie', new_wish_path, class: "nav-item nav-link #{active_class(new_wish_path)}" %>
+      <%= link_to 'Wyloguj', destroy_user_session_path, class: 'nav-item nav-link' %>
+    </div>
+  </div>
+</nav>
