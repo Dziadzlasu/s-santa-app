@@ -6,5 +6,5 @@ pl:
       not_found_in_database: 'Niepoprawny login lub hasło.'
     sessions:
       user:
-        signed_in: "Zalogowany."
-        signed_out: "Wylogowany."
+        signed_in: "Zalogowano."
+        signed_out: "Wylogowano."
