@@ -1,0 +1,18 @@
+div.image-wrapper:hover {
+  opacity: 0.5;
+}
+
+.image-wrapper:hover .img_source {
+  visibility: visible;
+  opacity: 1;
+}
+.img_source {
+  position: absolute;
+  top: 42%;
+  left: 29%;
+  background: rgba(255, 255, 255, 0);
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .2s, visibility .2s;
+}
