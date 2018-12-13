@@ -1,15 +1,17 @@
-<h2><%= t('wish.input') %> </h2>
+<div class="col-sm-12 col-lg-9 mx-auto mb-5 mb-xl-4 mt-5 mt-sm-0 pt-5">
+  <h2><%= t('wish.input') %> </h2>
 
-<%= form_for @wish do |form| %>
-  <div class='form-group'>
-    <%= form.text_area :description, rows: 5, required: true, class: 'form-control', placeholder: t('wish.new_placeholder') %>
-  </div>
-  <%= form.submit t('save'), class: 'button, btn-primary' %>
-<% end %>
+  <% if @current_wish.blank? %>
+    <%= form_for @wish do |form| %>
+      <div class='form-group'>
+        <%= form.text_area :description, rows: 5, required: true, class: 'form-control', placeholder: t('wish.new_placeholder') %>
+      </div>
+      <%= form.submit t('save'), class: 'button, btn-primary' %>
+    <% end %>
+  <% end %>
 
-<% if @current_wish.present? %>
-  <div class="col-sm-12 col-lg-7 col-xl-7 mx-auto mb-5 mb-xl-4 mt-5 mt-sm-0 pt-5">
-    <div class="card">
+  <% if @current_wish.present? %>
+    <div class="card mt-5">
       <div class='image-wrapper'>
         <img class="card-img-top" src="/images/dog.jpg" alt="Card image cap">
       </div>
@@ -22,5 +24,5 @@
         <%#= link_to 'Zmień', '#', class: 'card-link' %>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
