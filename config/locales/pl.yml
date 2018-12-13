@@ -8,6 +8,7 @@ pl:
     input: 'Co chcesz dostać pod choinkę?'
     create_success: 'Zapisano życzenia'
     create_failed: 'Nie powiodło się zapisanie życzenia. Sprawdź czy pole jest poprawnie wypełnione.'
+    update_success: 'Zaktualizowano życzenia'
 
   activerecord:
     models:

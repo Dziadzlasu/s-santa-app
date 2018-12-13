@@ -15,6 +15,22 @@ class WishesController < ApplicationController
     end
   end
 
+  def edit
+    @wish = Wish.find(params[:id])
+  end
+
+  def update
+    @wish = current_user.wishes.find(params[:id])
+
+    if @wish.present? && @wish.update(wish_params)
+      flash[:success] = t('wish.update_success')
+      redirect_to new_wish_path
+    else
+      flash[:error] = t('wish.create_failed')
+      render :edit
+    end
+  end
+
   private
 
   def wish_params
