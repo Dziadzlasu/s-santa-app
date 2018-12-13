@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_12_222126) do
+ActiveRecord::Schema.define(version: 2018_12_13_204513) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2018_12_12_222126) do
     t.boolean "active", default: true
     t.integer "giver_id"
     t.integer "recipient_id"
+    t.index ["giver_id"], name: "index_pairings_on_giver_id"
+    t.index ["recipient_id"], name: "index_pairings_on_recipient_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,5 +50,7 @@ ActiveRecord::Schema.define(version: 2018_12_12_222126) do
     t.index ["user_id"], name: "index_wishes_on_user_id"
   end
 
+  add_foreign_key "pairings", "users", column: "giver_id"
+  add_foreign_key "pairings", "users", column: "recipient_id"
   add_foreign_key "wishes", "users"
 end
