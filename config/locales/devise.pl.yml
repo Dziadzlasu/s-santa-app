@@ -8,3 +8,5 @@ pl:
       user:
         signed_in: "Zalogowano."
         signed_out: "Wylogowano."
+    registrations:
+      signed_up: 'Zarejestrowano pomyślnie.'
