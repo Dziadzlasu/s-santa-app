@@ -1,6 +1,7 @@
 class WishesController < ApplicationController
   def new
     @wish = Wish.new
+    @current_wish = current_user.wish_to_fulfill
   end
 
   def create
