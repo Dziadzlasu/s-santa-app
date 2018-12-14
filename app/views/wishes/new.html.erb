@@ -1,17 +1,7 @@
-<div class="col-sm-12 col-lg-9 mx-auto mb-5 mb-xl-4 mt-5 mt-sm-0 pt-5">
-  <h2><%= t('wish.input') %> </h2>
-
-  <% if @current_wish.blank? %>
-    <%= form_for @wish do |form| %>
-      <div class='form-group'>
-        <%= form.text_area :description, rows: 5, required: true, class: 'form-control', placeholder: t('wish.new_placeholder') %>
-      </div>
-      <%= form.submit t('save'), class: 'button, btn-primary' %>
-    <% end %>
-  <% end %>
-
-  <% if @current_wish.present? %>
-    <div class="card mt-5">
+<h2><%= t('wish.input') %> </h2>
+<% if @current_wish.present? %>
+  <div class="col-sm-12 col-lg-7 col-xl-7 mx-auto mb-5 mb-xl-4 mt-5 mt-sm-0 pt-5">
+    <div class="card">
       <div class='image-wrapper'>
         <img class="card-img-top" src="/images/dog.jpg" alt="Card image cap">
         <p class='img_source'>
@@ -24,8 +14,10 @@
         <p class="card-text">
           <%= @current_wish.description %>
         </p>
-        <%#= link_to 'Zmień', '#', class: 'card-link' %>
+        <%= link_to 'Zmień życzenia', edit_wish_path(@current_wish.id), class: 'card-link' %>
       </div>
     </div>
+  <% else %>
+    <%= render partial: 'form' %>
   <% end %>
 </div>
