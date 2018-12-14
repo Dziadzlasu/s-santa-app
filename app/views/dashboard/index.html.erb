@@ -1,5 +1,7 @@
-<% if @recipient.present? %>
-  <%= render partial: 'dashboard/shared/giftee_card' %>
-<% else %>
-  <%= render partial: 'dashboard/shared/empty_giftee_card' %>
+<% if policy(:dashboard).index? %>
+  <% if @recipient.present? %>
+    <%= render partial: 'dashboard/shared/giftee_card' %>
+  <% else %>
+    <%= render partial: 'dashboard/shared/empty_giftee_card' %>
+  <% end %>
 <% end %>

@@ -9,7 +9,9 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <%= link_to 'Strona główna', root_path, class: "nav-item nav-link #{active_class(root_path)}" %>
-        <%= link_to 'Dodaj życzenie', new_wish_path, class: "nav-item nav-link #{active_class(new_wish_path)}" %>
+        <% if policy(:wish).new? %>
+          <%= link_to 'Dodaj życzenie', new_wish_path, class: "nav-item nav-link #{active_class(new_wish_path)}" %>
+        <% end %>
         <%= link_to 'Wyloguj', destroy_user_session_path, method: 'delete', class: 'nav-item nav-link' %>
       </div>
     </div>

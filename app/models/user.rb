@@ -56,6 +56,10 @@ class User < ApplicationRecord
     wishes.pending.first
   end
 
+  def approved?
+    registration_status.eql? 'approved'
+  end
+
   protected
 
   def email_required?
