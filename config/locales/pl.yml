@@ -1,4 +1,5 @@
 pl:
+  unauthorized_action: 'Nie masz uprawnień do tej operacji. Nie kombinuj!'
   save: 'Zapisz'
   sign_up: 'Rejestracja'
   log_in: 'Login'
