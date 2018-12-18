@@ -10,7 +10,7 @@ class WishesController < ApplicationController
       flash[:success] = t('wish.create_success')
       redirect_to new_wish_path
     else
-      flash[:error] = t('wish.create_failed')
+      flash[:error] = @wish.errors.full_messages.join(' ')
       render :new
     end
   end
@@ -22,7 +22,7 @@ class WishesController < ApplicationController
   def update
     @wish = current_user.wishes.find(params[:id])
 
-    if @wish.present? && @wish.update(wish_params)
+    if @wish.present? && @wish.status == 'pending' && @wish.update(wish_params)
       flash[:success] = t('wish.update_success')
       redirect_to new_wish_path
     else
