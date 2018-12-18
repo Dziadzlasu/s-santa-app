@@ -14,7 +14,9 @@
         <p class="card-text">
           <%= @current_wish.description %>
         </p>
-        <%= link_to 'Zmień życzenie', edit_wish_path(@current_wish.id), class: 'card-link' %>
+        <% if @current_wish.status == 'pending'%>
+          <%= link_to 'Zmień życzenie', edit_wish_path(@current_wish.id), class: 'card-link' %>
+        <% end %>
       </div>
     </div>
   <% else %>

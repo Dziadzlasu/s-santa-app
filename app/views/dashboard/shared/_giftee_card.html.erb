@@ -11,12 +11,17 @@
       <h5 class="card-title text-center"><%= @recipient.full_name %></h5>
       <h6 class="card-title text-center text-muted">Życzy sobie:</h6>
       <% if @wish.present? %>
-        <p class="card-text">
+        <p class="card-text text-center">
           <%= @wish.description %>
         </p>
+        <% if @wish.status == 'pending'%>
+          <div class="col-12 text-center">
+            <%= link_to t('wish.lock'), lock_wish_path(@wish.id), class: 'btn btn-primary' %>
+          </div>
+        <% end %>
       <% else %>
         <p class='card-text text-center'>
-          Wygląda na to, że jeszcze nie ma tu wymarzonego prezentu
+          Wygląda na to, że jeszcze nie ma tu wymarzonego prezentu.
         </p>
       <% end %>
     </div>

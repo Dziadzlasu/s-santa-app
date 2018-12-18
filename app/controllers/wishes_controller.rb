@@ -35,6 +35,17 @@ class WishesController < ApplicationController
     end
   end
 
+
+  def lock
+    @wish = Wish.find(params[:id])
+    if @wish.present? && @wish.status == 'pending'
+      @wish.status = 'completed'
+      @wish.save!
+      flash[:success] = t('wish.locked')
+      redirect_to root_path
+    end
+  end
+
   private
 
   def wish_params

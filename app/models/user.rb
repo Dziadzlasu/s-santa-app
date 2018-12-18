@@ -56,6 +56,10 @@ class User < ApplicationRecord
     wishes.pending.first
   end
 
+  def wish_to_display
+    wishes.where('status in (?) and created_at > ?',['pending', 'completed'], Time.now.beginning_of_year).first
+  end
+
   def approved?
     registration_status.eql? 'approved'
   end

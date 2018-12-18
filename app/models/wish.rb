@@ -9,7 +9,7 @@ class Wish < ApplicationRecord
   scope :expired, -> { where(status: 'expired') }
 
   def one_wish
-    return unless Wish.where(user_id: self.user_id, status: 'pending').exists?
+    return unless Wish.where(user_id: self.user_id, status: 'pending').where.not(id: self.id).exists?
 
     errors.add(:base, :second_pending)
   end
