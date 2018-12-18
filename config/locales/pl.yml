@@ -12,6 +12,12 @@ pl:
     update_success: 'Zaktualizowano życzenia'
 
   activerecord:
+    errors:
+      models:
+        wish:
+          attributes:
+            base:
+              second_pending: 'Nie możesz mieć dwóch oddzielnych życzeń. Wpisz wszystko w jednym.'
     models:
       user: 'Użytkownik'
     attributes:
