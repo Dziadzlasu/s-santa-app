@@ -1,11 +1,13 @@
 class WishesController < ApplicationController
   def new
     @wish = Wish.new
+    authorize @wish, :new?
     @current_wish = current_user.wish_to_fulfill
   end
 
   def create
     @wish = current_user.wishes.new(wish_params)
+    authorize @wish, :create?
     if @wish.valid? && @wish.save!
       flash[:success] = t('wish.create_success')
       redirect_to new_wish_path
@@ -17,10 +19,12 @@ class WishesController < ApplicationController
 
   def edit
     @wish = Wish.find(params[:id])
+    authorize @wish, :edit?
   end
 
   def update
     @wish = current_user.wishes.find(params[:id])
+    authorize @wish, :update?
 
     if @wish.present? && @wish.update(wish_params)
       flash[:success] = t('wish.update_success')

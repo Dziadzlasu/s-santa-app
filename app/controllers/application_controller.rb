@@ -1,6 +1,19 @@
 class ApplicationController < ActionController::Base
+  include Pundit
+  protect_from_forgery
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :authenticate_user!
+
+  rescue_from Pundit::NotAuthorizedError, with: :not_authorized_error
+
+  def not_authorized_error
+    respond_to do |format|
+      format.html do
+        flash[:error] = t('unauthorized_action')
+        redirect_to root_path
+      end
+    end
+  end
 
   protected
 
