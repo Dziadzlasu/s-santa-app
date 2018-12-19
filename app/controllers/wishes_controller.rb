@@ -43,6 +43,9 @@ class WishesController < ApplicationController
       @wish.save!
       flash[:success] = t('wish.locked')
       redirect_to root_path
+    else
+      flash[:error] = t('wish.already_locked')
+      redirect_to root_path
     end
   end
 

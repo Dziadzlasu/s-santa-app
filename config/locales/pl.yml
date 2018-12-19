@@ -12,6 +12,7 @@ pl:
     update_success: 'Zaktualizowano życzenia.'
     lock: 'Oznacz prezent jako zakupiony'
     locked: 'Prezent został pomyślnie oznaczony jako zakupiony.'
+    already_locked: 'Prezent jest już oznaczony jako zakupiony.'
 
   activerecord:
     errors:
