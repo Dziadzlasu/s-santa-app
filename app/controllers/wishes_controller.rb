@@ -2,7 +2,7 @@ class WishesController < ApplicationController
   def new
     @wish = Wish.new
     authorize @wish, :new?
-    @current_wish = current_user.wish_to_fulfill
+    @current_wish = current_user.wish_to_fulfill || current_user.wish_to_display
   end
 
   def create

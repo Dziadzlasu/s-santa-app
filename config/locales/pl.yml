@@ -7,9 +7,9 @@ pl:
   wish:
     new_placeholder: 'Wpisz czego sobie życzysz pod choinkę, pomóż Mikołajowi!'
     input: 'Co chcesz dostać pod choinkę?'
-    create_success: 'Zapisano życzenia.'
+    create_success: 'Zapisano życzenie.'
     create_failed: 'Nie powiodło się zapisanie życzenia. Sprawdź czy pole jest poprawnie wypełnione.'
-    update_success: 'Zaktualizowano życzenia.'
+    update_success: 'Zaktualizowano życzenie.'
     lock: 'Oznacz prezent jako zakupiony'
     locked: 'Prezent został pomyślnie oznaczony jako zakupiony.'
     already_locked: 'Prezent jest już oznaczony jako zakupiony.'

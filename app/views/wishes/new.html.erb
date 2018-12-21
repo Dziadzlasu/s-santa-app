@@ -1,21 +1,27 @@
-<h2><%= t('wish.input') %> </h2>
+<h2 class = 'text-center'><%= t('wish.input') %> </h2>
 <% if @current_wish.present? %>
-  <div class="col-sm-12 col-lg-7 col-xl-7 mx-auto mb-5 mb-xl-4 mt-5 mt-sm-0 pt-5">
-    <div class="card">
+  <div class='col-sm-12 col-lg-7 col-xl-7 mx-auto mb-5 mb-xl-4 mt-5 mt-sm-0 pt-5'>
+    <div class='card'>
       <div class='image-wrapper'>
-        <img class="card-img-top" src="/images/dog.jpg" alt="Card image cap">
+        <img class='card-img-top' src='/images/dog.jpg' alt='Card image cap'>
         <p class='img_source'>
           Photo by Kostya Naddubov from Pexels
         </p>
       </div>
 
-      <div class="card-body">
-        <h5 class="card-title text-center">Twoje tegoroczne życzenie</h5>
-        <p class="card-text">
+      <div class='card-body'>
+        <h5 class='card-title text-center'>Twoje tegoroczne życzenie</h5>
+        <p class='card-text text-center'>
           <%= @current_wish.description %>
         </p>
         <% if @current_wish.status == 'pending'%>
-          <%= link_to 'Zmień życzenie', edit_wish_path(@current_wish.id), class: 'card-link' %>
+          <div class='col-12 text-center'>
+            <%= link_to 'Zmień życzenie', edit_wish_path(@current_wish.id), class: 'btn btn-primary' %>
+          </div>
+        <% else %>
+          <div class='col-12 text-center'>
+            <button type="button" class="btn btn-secondary" data-toggle="popover" data-trigger="focus" title='Za późno!' data-content='Prezent dla Ciebie jest już gotowy. Nie możesz zmienić życzenia.'>Zmień życzenie</button>
+          </div>
         <% end %>
       </div>
     </div>
