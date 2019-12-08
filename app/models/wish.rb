@@ -2,7 +2,7 @@ class Wish < ApplicationRecord
   belongs_to :user
 
   validates_presence_of :description
-  validate :one_wish
+  validate :one_wish, on: :create
 
   scope :pending, -> { where(status: 'pending') }
   scope :fulfilled, -> { where(status: 'completed') }
